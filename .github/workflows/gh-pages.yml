@@ -33,4 +33,5 @@ jobs:
       run: npm run build:prod
 
     - name: Deploy
+      if: success()
       run: aws s3 sync ./dist/github-actions-amazon-s3 s3://angular-app-tymian
